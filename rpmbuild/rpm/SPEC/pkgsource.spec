@@ -19,27 +19,31 @@
 # See also http://en.opensuse.org/openSUSE:Specfile_guidelines
 
 Name:           pkgsource
-Version:        $version
-Release:        $release
-Summary:        $summary
-BuildArch:	noarch
-License:        $license
-Group:          Development/Tools
-Url:            http://localhost
-Source0:        pkgsource-1.tar.gz
+Version:        
+Release:        0
+Summary:        
+License:        
+Group:          
+Url:            
+Source0:        
+BuildRequires:  
+Requires:       
 
 %description
-$desc
+
 
 %prep
 %setup -q
 
+%build
+%configure
+make %{?_smp_mflags}
+
 %install
-mkdir -p "$RPM_BUILD_ROOT/var/www"
-cp -R * "$RPM_BUILD_ROOT/var/www"
+make install DESTDIR=%{buildroot}
+
 %files
-/var/www/
-%clean
-rm -rf $RPM_BUILD_ROOT
+%doc
 
 
+%changelog
