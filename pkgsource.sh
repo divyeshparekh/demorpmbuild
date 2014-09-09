@@ -18,8 +18,8 @@ echo "%build"
 
 echo "
 %install
-mkdir -p \"\$RPM_BUILD_ROOT/var/www/demorpmbuildnew\"
-cp -R * \"\$RPM_BUILD_ROOT/var/www/demorpmbuildnew\"
+mkdir -p \"\$RPM_BUILD_ROOT/var/www/demorpmbuild/source\"
+cp -R * \"\$RPM_BUILD_ROOT/var/www/demorpmbuild/source\"
 
 
 %clean
@@ -27,7 +27,7 @@ rm -rf \$RPM_BUILD_ROOT
 
 
 %files
-/var/www/demorpmbuildnew
+/var/www/demorpmbuild/source
 
 %changelog
 "
